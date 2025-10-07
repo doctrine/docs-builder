@@ -25,11 +25,7 @@ fi
 defaultOutputDir="$rootDir/output"
 outputDir="${outputArg:-${defaultOutputDir:-default}}"
 
-baseDir=$(dirname "$0")
+baseDir=$(dirname "$(dirname "$0")")
+composer install -d "$baseDir"
 
-cd "$baseDir" || exit
-cd ../
-composer install
-
-vendor/bin/guides -vvv --no-progress --fail-on-log "$rootDir/$inputDir" --output="$outputDir"
-cd "$rootDir" || exit
+"$baseDir/vendor/bin/guides" -vvv --no-progress --fail-on-log "$rootDir/$inputDir" --output="$outputDir"
