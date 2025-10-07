@@ -13,8 +13,17 @@ rootDir=$PWD
 
 inputDir="docs/en"
 
+outputArg="${1}"
+firstChar=$(echo "$1" | cut -c1-1)
+
+if [ "$firstChar" != "/" ]
+then
+  # Output directory should be relative to working directory
+  outputArg="$rootDir/$outputArg"
+fi
+
 defaultOutputDir="$rootDir/output"
-outputDir="${1:-${defaultOutputDir:-default}}"
+outputDir="${outputArg:-${defaultOutputDir:-default}}"
 
 baseDir=$(dirname "$0")
 
