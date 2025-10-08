@@ -17,4 +17,4 @@ on:
 jobs:
   composer-lint:
     name: "Composer Lint"
-    uses: "doctrine/.github/.github/workflows/composer-lint.yml@9cfa15f09ecce61912ae40b5befa8e920c4a98a4"
+    uses: "doctrine/.github/.github/workflows/composer-lint.yml@8.0.0"
