@@ -11,17 +11,17 @@ change, or even disappear, at any moment without prior notice.
 ## Usage:
 
 ```shell
-composer require --dev doctrine/docs-builder
-./vendor/bin/build-docs.sh [<output>]
+composer require --dev doctrine/docs-builder -d docs
+./docs/vendor/bin/build-docs.sh [<output>]
 ```
 
-The output directory defaults to `output` at the root of your project.
+The output directory defaults to `docs/output`.
 
 Optionally, declare a script in your root `composer.json` for convenience:
 
 ```
 "scripts": {
-    "docs": "./vendor/bin/build-docs.sh @additional_args"
+    "docs": "./docs/vendor/bin/build-docs.sh @additional_args"
 }
 ```
 
