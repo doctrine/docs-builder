@@ -16,7 +16,7 @@ inputDir="docs/en"
 outputArg="${1}"
 firstChar=$(echo "$1" | cut -c1-1)
 
-if [ "$firstChar" != "/" ]
+if [ "$firstChar" != "/" ] && [ "$firstChar" != "" ]
 then
   # Output directory should be relative to working directory
   outputArg="$rootDir/$outputArg"
