@@ -1,19 +1,27 @@
 {
     "name": "doctrine/docs-builder",
     "description": "Helper package for building the docs in Doctrine repos",
-    "type": "library",
-    "require": {
-        "phpdocumentor/guides-cli": "1.7.1",
-        "phpdocumentor/filesystem": "1.7.1"
-    },
     "license": "MIT",
-    "bin": [
-        "bin/build-docs.sh"
-    ],
+    "type": "library",
     "authors": [
         {
             "name": "Pauline Vos",
             "email": "pauline.vos@mongodb.com"
         }
-    ]
+    ],
+    "require": {
+        "phpdocumentor/filesystem": "1.7.1",
+        "phpdocumentor/guides-cli": "1.7.1"
+    },
+    "require-dev": {
+        "ergebnis/composer-normalize": "^2.48"
+    },
+    "bin": [
+        "bin/build-docs.sh"
+    ],
+    "config": {
+        "allow-plugins": {
+            "ergebnis/composer-normalize": true
+        }
+    }
 }
