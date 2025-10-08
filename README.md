@@ -6,7 +6,7 @@ the generating command. It assumes the input directory is in `docs/en` at the ro
 ## Usage:
 
 ```shell
-composer require --dev paulinevos/doctrine-docs-builder
+composer require --dev doctrine/doctrine-docs-builder
 ./vendor/bin/build-docs.sh [<output>]
 ```
 
