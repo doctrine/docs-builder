@@ -4,6 +4,7 @@ on:
   pull_request:
     branches:
       - "*.x"
+      - "main"
     paths:
       - ".github/workflows/composer-lint.yml"
       - "composer.json"

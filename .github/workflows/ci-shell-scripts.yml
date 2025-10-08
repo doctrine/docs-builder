@@ -10,6 +10,7 @@ on:
   push:
     branches:
       - "*.*.x"
+      - "*.*.*"
     paths:
       - ".github/workflows/ci-shell-scripts.yml"
       - "bin/**"
