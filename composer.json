@@ -1,5 +1,5 @@
 {
-    "name": "paulinevos/doctrine-docs-builder",
+    "name": "doctrine/docs-builder",
     "description": "Helper package for building the docs in Doctrine repos",
     "type": "library",
     "require": {
