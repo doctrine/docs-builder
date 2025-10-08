@@ -1,7 +1,12 @@
 # Doctrine Docs Builder
 
 A package for generating Doctrine repo docs in a unified way. Its purpose is to abstract the underlying method away from
-the generating command. It assumes the input directory is in `docs/en` at the root of the repo (for now).
+the generating command. It assumes the input directory is `docs/en/` (for now). It uses 
+[phpdocumentor](https://github.com/phpDocumentor/guides) tooling for parsing the RST files.
+
+This project is considered an internal tool and therefore, you shouldn't use this project in your application. This 
+repository doesn't provide any support, and doesn't guarantee backward compatibility. Any or the entire project can 
+change, or even disappear, at any moment without prior notice.
 
 ## Usage:
 
