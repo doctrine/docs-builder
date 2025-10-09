@@ -16,7 +16,8 @@ firstChar=$(echo "$1" | cut -c1-1)
 
 if [ "$firstChar" != "/" ] && [ "$firstChar" != "" ]
 then
-  # Output directory should be relative to working directory
+  # The output path provided is not an absolute path;
+  # therefore treat the path as relative to the working dir (project root).
   outputArg="$docsRoot/$outputArg"
 fi
 
