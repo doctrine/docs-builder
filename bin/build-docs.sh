@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-usage="$(basename "$0") [-h] [<outputDir>] -- generate the docs to given output dir [default: output]"
+usage="$(basename "$0") [-h] [<outputDir>] -- generate docs to given output dir [default: docs/output]"
 
 # shellcheck disable=SC2034
 if getopts ":h" option
@@ -9,23 +9,19 @@ then
   exit
 fi
 
-rootDir=$PWD
-
-inputDir="docs/en"
+docsRoot="$PWD/docs"
 
 outputArg="${1}"
 firstChar=$(echo "$1" | cut -c1-1)
 
 if [ "$firstChar" != "/" ] && [ "$firstChar" != "" ]
 then
-  # Output directory should be relative to working directory
-  outputArg="$rootDir/$outputArg"
+  # The output path provided is not an absolute path;
+  # therefore treat the path as relative to the working dir (project root).
+  outputArg="$docsRoot/$outputArg"
 fi
 
-defaultOutputDir="$rootDir/output"
+defaultOutputDir="$docsRoot/output"
 outputDir="${outputArg:-${defaultOutputDir:-default}}"
 
-baseDir=$(dirname "$(dirname "$0")")
-output=$(composer install -d "$baseDir" 2>&1) || print "$output"
-
-"$baseDir/vendor/bin/guides" -vvv --no-progress --fail-on-log "$rootDir/$inputDir" --output="$outputDir"
+"$docsRoot/vendor/bin/guides" -vvv --no-progress --fail-on-log "$docsRoot/en" --output="$outputDir"
