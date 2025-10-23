@@ -10,8 +10,8 @@
         }
     ],
     "require": {
-        "phpdocumentor/filesystem": "1.7.1",
-        "phpdocumentor/guides-cli": "1.7.1"
+        "phpdocumentor/filesystem": "^1.9",
+        "phpdocumentor/guides-cli": "^1.9"
     },
     "require-dev": {
         "ergebnis/composer-normalize": "^2.48"
